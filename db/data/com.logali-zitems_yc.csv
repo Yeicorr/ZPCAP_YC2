@@ -1,0 +1,3 @@
+ID;Id_Item;Name;Description;Releasedate;Discontinueddate;Price;Height;Width;Depth;Quantity;Unitofmeasure;
+54fda28b-a569-4e91-aa45-87f2955bc21d;1;Bolsa;Extra;2024-01-01;2024-06-12;100.00;20.000;30.000;50.00;15.02;KG;
+54fda28b-a569-4e91-aa45-87f2955bc21d;2;Cajon;Minimun;2024-02-01;2024-07-12;200.00;30.000;20.000;10.00;10.00;KG;
