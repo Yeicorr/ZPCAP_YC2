@@ -18,16 +18,15 @@ entity zorden_yc : cuid {
         Refused  = 3;
     };
     Imageurl     : String;
-//     ItemsID      : String(4) not null;
-//     Items        : Association to zitems_yc
-//                    on Items.id_item = ItemsID;
+    Items        : Composition of many zitems_yc
+                       on Items.Order = $self;
 }
 
-entity zitems_yc: cuid {
-   // key ID               : String(36) not null;
+entity zitems_yc  {
+    key ID               : UUID not null;
     key Id_Item          : String(4) not null;
-        Name             : localized String(40);
-        Description      : localized String(40);
+        Name             : String(40);
+        Description      : String(40);
         Releasedate      : Date;
         Discontinueddate : Date;
         Price            : Decimal(12, 2);
