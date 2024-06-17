@@ -22,18 +22,16 @@ entity zorden_yc : cuid {
                        on Items.Order = $self;
 }
 
-entity zitems_yc  {
-    key ID               : UUID not null;
-    key Id_Item          : String(4) not null;
+entity zitems_yc : cuid {
         Name             : String(40);
         Description      : String(40);
         Releasedate      : Date;
         Discontinueddate : Date;
         Price            : Decimal(12, 2);
-        Height           : Decimal(15, 3);
-        Width            : Decimal(13, 3);
-        Depth            : Decimal(12, 2);
+        Height           : Decimal(15, 3) @Measures.Unit:Unitofmeasure ;
+        Width            : Decimal(13, 3) @Measures.Unit:Unitofmeasure;
+        Depth            : Decimal(12, 2) @Measures.Unit:Unitofmeasure;
         Quantity         : Decimal(16, 2);
-        Unitofmeasure    : ZDE_MEINS;
+        Unitofmeasure    : ZDE_MEINS @Common.IsUnit;
         Order            : Association to zorden_yc;
 }

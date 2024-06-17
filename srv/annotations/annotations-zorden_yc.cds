@@ -122,7 +122,7 @@ annotate Srv.Order with @(
         $Type : 'UI.CollectionFacet',
         Facets: [{
             $Type : 'UI.ReferenceFacet',
-            Target: 'Items/@UI.FieldGroup#Items',
+            Target: 'Items/@UI.LineItem',
         }]
     }]
 );
