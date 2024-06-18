@@ -5,15 +5,15 @@ using from './annotations-zitems_yc';
 annotate Srv.Order @odata.draft.enabled;
 
 annotate Srv.Order with {
-    ID           @title: 'Product';
+    ID           @title: 'ID';
     Email        @mandatory;
-    Firstname    @title: 'Firstname';
-    Lastname     @title: 'Lastname';
-    Country      @title: 'Country';
-    Createon     @title: 'Createon'  @readonly;
-    Deliverydate @title: 'Deliverydate';
-    Orderstatus  @title: 'Status' @assert.range: [1,3];
-    Imageurl     @title: 'Image';
+    Firstname    @title: '{i18n>firstname}';
+    Lastname     @title: '{i18n>lastname}';
+    Country      @title: '{i18n>country}';
+    Createon     @title: '{i18n>createon}'  @readonly;
+    Deliverydate @title: '{i18n>deliverydate}';
+    Orderstatus  @title: '{i18n>deliverydate}' @assert.range: [1,3];
+    Imageurl     @title: '{i18n>image}' ;
 };
 
 annotate Srv.Order with @(
