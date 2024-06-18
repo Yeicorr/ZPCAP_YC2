@@ -17,7 +17,7 @@ entity zorden_yc : cuid {
         Accepted = 2;
         Refused  = 3;
     };
-    Imageurl     : String;
+    Imageurl     : LargeBinary @UI.IsImage @Core.MediaType: 'image/jpg';
     Items        : Composition of many zitems_yc
                        on Items.Order = $self;
 }

@@ -22,47 +22,47 @@ annotate Srv.Items with @(
             },
             {
                 $Type: 'UI.DataField',
-                Label: '{i18n>name}',
+                Label: '{i18n>description}',
                 Value: Description,
             },
             {
                 $Type: 'UI.DataField',
-                Label: '{i18n>name}',
+                Label: '{i18n>releasedate}',
                 Value: Releasedate,
             },
             {
                 $Type: 'UI.DataField',
-                Label: '{i18n>name}',
+                Label: '{i18n>discontinueddate}',
                 Value: Discontinueddate,
             },
             {
                 $Type: 'UI.DataField',
-                Label: '{i18n>name}',
+                Label: '{i18n>price}',
                 Value: Price,
             },
             {
                 $Type: 'UI.DataField',
-                Label: '{i18n>name}',
+                Label: '{i18n>height}',
                 Value: Height,
             },
             {
                 $Type: 'UI.DataField',
-                Label: '{i18n>name}',
+                Label: '{i18n>width}',
                 Value: Width,
             },
             {
                 $Type: 'UI.DataField',
-                Label: '{i18n>name}',
+                Label: '{i18n>depth}',
                 Value: Depth,
             },
             {
                 $Type: 'UI.DataField',
-                Label: '{i18n>name}',
+                Label: '{i18n>quantity}',
                 Value: Quantity,
             },
             {
                 $Type: 'UI.DataField',
-                Label: '{i18n>name}',
+                Label: '{i18n>unitofmeasure}',
                 Value: Unitofmeasure,
             },
         ]

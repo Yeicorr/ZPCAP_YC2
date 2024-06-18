@@ -1,6 +1,9 @@
 using {ServiceCatalog as Srv} from '../service';
 using from './annotations-zitems_yc';
 
+//CRUD Activation
+annotate Srv.Order @odata.draft.enabled;
+
 annotate Srv.Order with {
     ID           @title: 'Product';
     Email        @mandatory;
@@ -9,7 +12,7 @@ annotate Srv.Order with {
     Country      @title: 'Country';
     Createon     @title: 'Createon'  @readonly;
     Deliverydate @title: 'Deliverydate';
-    Orderstatus  @title: 'Status';
+    Orderstatus  @title: 'Status' @assert.range: [1,3];
     Imageurl     @title: 'Image';
 };
 
@@ -31,6 +34,11 @@ annotate Srv.Order with @(
     UI.FieldGroup #GeneratedGroup: {
         $Type: 'UI.FieldGroupType',
         Data : [
+            {
+                $Type: 'UI.DataField',
+                Label: '{i18n>image}',
+                Value: Imageurl,
+            },
             {
                 $Type: 'UI.DataField',
                 Label: '{i18n>id}',
@@ -81,6 +89,11 @@ annotate Srv.Order with @(
     UI.LineItem                  : [
         {
             $Type: 'UI.DataField',
+            Label: '{i18n>image}',
+            Value: Imageurl,
+        },
+        {
+            $Type: 'UI.DataField',
             Label: 'email',
             Value: Email,
         },
@@ -118,11 +131,19 @@ annotate Srv.Order with @(
             Value: Orderstatus,
         },
     ],
-    UI.Facets                    : [{
-        $Type : 'UI.CollectionFacet',
-        Facets: [{
+    UI.Facets                    : [
+        {
             $Type : 'UI.ReferenceFacet',
-            Target: 'Items/@UI.LineItem',
-        }]
-    }]
+            ID    : 'GeneratedFacet1',
+            Label : '{i18n>GeneratedFacet1}', //General Information}',
+            Target: '@UI.FieldGroup#GeneratedGroup',
+        },
+        {
+            $Type : 'UI.CollectionFacet',
+            Facets: [{
+                $Type : 'UI.ReferenceFacet',
+                Target: 'Items/@UI.LineItem',
+            }]
+        }
+    ]
 );
